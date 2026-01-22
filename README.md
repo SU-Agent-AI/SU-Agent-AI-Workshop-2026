@@ -4,7 +4,7 @@ Official website for the Syracuse University Agent-AI Workshop 2026.
 
 ## 🌐 Live Website
 
-Visit the workshop website: [https://arpikhot.github.io/su-agent-ai-workshop-2026/](https://arpikhot.github.io/su-agent-ai-workshop-2026/)
+Visit the workshop website: [https://su-agent-ai.github.io/SU-Agent-AI-Workshop-2026/](https://su-agent-ai.github.io/SU-Agent-AI-Workshop-2026/)
 
 ## 📅 Event Details
 
@@ -65,7 +65,7 @@ su-agent-ai-workshop-2026/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/su-agent-ai-workshop-2026.git
+   git clone git@github.com:SU-Agent-AI/SU-Agent-AI-Workshop-2026.git
    ```
 
 2. Open `index.html` in a web browser or use a local server:
