@@ -668,30 +668,122 @@
         }
 
         /* Sponsors */
-        .sponsors-placeholder {
+        .sponsors-block {
             background-color: var(--bg-primary);
             padding: calc(var(--spacing-unit) * 8) calc(var(--spacing-unit) * 6);
             border-radius: 12px;
-            text-align: center;
+            text-align: left;
             box-shadow: var(--shadow-md);
-            border: 2px dashed var(--border-color);
+            border: 1px solid var(--border-color);
         }
 
-        .sponsors-placeholder p {
+        .sponsors-block p {
             margin: calc(var(--spacing-unit) * 2) 0;
             color: var(--text-secondary);
         }
 
-        .sponsors-placeholder a {
+        .sponsors-block a {
             color: var(--su-orange);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.2s ease;
         }
 
-        .sponsors-placeholder a:hover {
+        .sponsors-block a:hover {
             color: var(--su-orange-dark);
             text-decoration: underline;
+        }
+
+        .sponsors-meta {
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--spacing-unit) * 2);
+        }
+
+        .sponsors-meta-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+            font-weight: 700;
+        }
+
+        .sponsors-meta-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--su-blue-dark);
+        }
+
+        .sponsor-group {
+            margin-top: calc(var(--spacing-unit) * 4);
+            text-align: left;
+        }
+
+        .sponsor-group-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            font-weight: 700;
+        }
+
+        .sponsors-logos {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: calc(var(--spacing-unit) * 4);
+            margin: calc(var(--spacing-unit) * 4) 0 calc(var(--spacing-unit) * 4);
+        }
+
+        .sponsor-section-wrap {
+            padding: calc(var(--spacing-unit) * 3) calc(var(--spacing-unit) * 4);
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(0, 61, 165, 0.06), rgba(247, 105, 0, 0.04));
+            border: 1px solid rgba(0, 61, 165, 0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sponsor-section-logo {
+            width: min(560px, 100%);
+            height: auto;
+            max-height: 90px;
+            object-fit: contain;
+        }
+
+        .sponsor-societies {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(160px, 1fr));
+            gap: calc(var(--spacing-unit) * 3);
+            align-items: stretch;
+        }
+
+        .sponsor-society-card {
+            padding: calc(var(--spacing-unit) * 3);
+            border-radius: 14px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 110px;
+        }
+
+        .sponsor-society-logo {
+            width: 100%;
+            height: auto;
+            max-height: 55px;
+            object-fit: contain;
+        }
+
+        @media (max-width: 900px) {
+            .sponsor-societies {
+                grid-template-columns: 1fr;
+            }
+            .sponsor-society-card {
+                min-height: 90px;
+            }
         }
 
         /* Committee */
@@ -1054,7 +1146,7 @@
                         <tr>
                             <td class="time-cell">8:00AM – 9:00AM</td>
                             <td>
-                                <div class="event-title">Coffee and Networking</div>
+                                <div class="event-title">Coffee and Networking - Sponsored by the IEEE Syracuse Section</div>
                                 <div class="event-details">
                                     <p>Meet in the lobby, get registered, enjoy some coffee, and meet your fellow attendees.</p>
                                 </div>
@@ -1104,7 +1196,7 @@
                         <tr>
                             <td class="time-cell">11:00AM – 11:50AM</td>
                             <td>
-                                <div class="event-title">Invited Talk (Topic to be finalized)</div>
+                                <div class="event-title">Invited Talk: "Human-Aware Reinforcement Learning: Towards Natural Human–Robot Collaboration"</div>
                                 <div class="event-details">
                                     <p class="speaker-name">Professor Jamison Heard</p>
                                     <p>Assistant Professor, Department of Electrical and Microelectronic Engineering</p>
@@ -1116,7 +1208,7 @@
                         <tr>
                             <td class="time-cell">12:00Noon – 12:50PM</td>
                             <td>
-                                <div class="event-title">Invited Talk (Topic to be finalized)</div>
+                                <div class="event-title">Invited Talk: "Recent theoretical advances in diffusion models"</div>
                                 <div class="event-details">
                                     <p class="speaker-name">Professor Yuchen Wu</p>
                                     <p>Assistant Professor, School of Operations Research and Information Engineering</p>
@@ -1191,9 +1283,40 @@
         </section>
 
         <section class="section" id="sponsors">
-            <h2 class="section-title">Our Sponsors</h2>
-            <div class="sponsors-placeholder">
-                <p style="margin-top: 0; font-size: 16px; font-weight: 600; color: var(--su-blue-dark);">Department of Electrical Engineering and Computer Science</p>
+            <h2 class="section-title">Hosts &amp; Sponsors</h2>
+            <div class="sponsors-block">
+                <div class="sponsors-meta">
+                    <div>
+                        <div class="sponsors-meta-title">Host Department</div>
+                        <div class="sponsors-meta-value">Department of Electrical Engineering and Computer Science, Syracuse University</div>
+                    </div>
+                    <div>
+                        <div class="sponsors-meta-title">Partner</div>
+                        <div class="sponsors-meta-value">IEEE Syracuse Section</div>
+                    </div>
+                </div>
+
+                <div class="sponsor-group">
+                    <div class="sponsors-logos" aria-label="IEEE section sponsor">
+                        <div class="sponsor-section-wrap">
+                            <img src="images/logos/SyrLogoHoriz.png" alt="IEEE Syracuse Section" class="sponsor-section-logo">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sponsor-group">
+                    <div class="sponsor-societies" aria-label="IEEE society sponsors">
+                        <div class="sponsor-society-card">
+                            <img src="images/logos/aess-logo.jpg" alt="IEEE Aerospace Electronics Systems Society (AESS)" class="sponsor-society-logo">
+                        </div>
+                        <div class="sponsor-society-card">
+                            <img src="images/logos/SPS_Logo_Color_RGB.jpg" alt="IEEE Signal Processing Society" class="sponsor-society-logo">
+                        </div>
+                        <div class="sponsor-society-card">
+                            <img src="images/logos/ComSoc-logo.png" alt="IEEE Communications Society (ComSoc)" class="sponsor-society-logo">
+                        </div>
+                    </div>
+                </div>
                 <p style="margin-top: 16px;">Interested in sponsoring?</p>
                 <p style="margin-top: 8px;">Please contact: Professor Priyantha Kumarawadu, <a href="mailto:spkumara@syr.edu">spkumara@syr.edu</a></p>          
              </div>
